@@ -6,15 +6,10 @@ Se il codice è su Windows/WSL, copialo sul Mac con uno di questi metodi:
 
 **Git (consigliato)**
 ```bash
-# Su Windows/WSL — committa e pusha
-cd steven-fitness-club
-git init && git add . && git commit -m "StevenFitnessClub"
-git remote add origin <tuo-repo>
-git push -u origin main
-
-# Sul Mac
-git clone <tuo-repo>
-cd steven-fitness-club/ios
+# Sul Mac — scarica l'ultima versione
+git clone https://github.com/SatoshiAllien/StevenFitnessClub.git
+cd StevenFitnessClub
+./INSTALLA_SU_IPHONE.command
 ```
 
 **USB / AirDrop / cartella condivisa**
