@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="StevenFitnessClub — App iOS avanzata di analisi fitness con Apple Salute. Dashboard, grafici, AI insights e export offline." />
+  <meta name="theme-color" content="#0A0A0A" />
+  <title>StevenFitnessClub — Analisi Fitness Avanzata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="img/logo.png" type="image/png" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="img/logo.png" alt="StevenFitnessClub" class="brand-logo" />
+        <span>StevenFitnessClub</span>
+      </a>
+      <nav class="nav">
+        <a href="#features">Funzionalità</a>
+        <a href="#how">Come funziona</a>
+        <a href="#download">Download</a>
+        <a href="https://github.com/SatoshiAllien/StevenFitnessClub" class="nav-cta" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <button class="menu-btn" aria-label="Menu" id="menuBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">iOS 17+ · Apple Salute · 100% offline</p>
+          <h1>La tua performance,<br /><span class="gradient-text">analizzata come un pro.</span></h1>
+          <p class="hero-lead">
+            StevenFitnessClub trasforma i dati di Apple Salute in dashboard, grafici avanzati,
+            confronti e AI insights — senza cloud, senza abbonamenti.
+          </p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Scarica l'app</a>
+            <a href="https://github.com/SatoshiAllien/StevenFitnessClub" class="btn btn-ghost" target="_blank" rel="noopener">Codice sorgente</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>6</strong><span>sport supportati</span></div>
+            <div><strong>3</strong><span>formati export</span></div>
+            <div><strong>0</strong><span>server cloud</span></div>
+          </div>
+        </div>
+        <div class="hero-phone">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="mock-header">
+                <img src="img/logo.png" alt="" class="mock-logo" />
+                <span>Dashboard</span>
+              </div>
+              <div class="mock-metrics">
+                <div class="mock-card blue"><small>Distanza</small><strong>42.8</strong><span>km</span></div>
+                <div class="mock-card orange"><small>Allenamenti</small><strong>12</strong><span></span></div>
+                <div class="mock-card green"><small>Performance</small><strong>87</strong><span>/100</span></div>
+                <div class="mock-card blue"><small>VO₂ Max</small><strong>52.1</strong><span>ml/kg</span></div>
+              </div>
+              <div class="mock-chart">
+                <div class="bar" style="--h:40%"></div>
+                <div class="bar" style="--h:65%"></div>
+                <div class="bar" style="--h:55%"></div>
+                <div class="bar" style="--h:80%"></div>
+                <div class="bar" style="--h:70%"></div>
+                <div class="bar" style="--h:90%"></div>
+                <div class="bar" style="--h:60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Tutto ciò che serve per capire i tuoi allenamenti</h2>
+        <p class="section-lead">Stile Strava/TrainingPeaks, ma i tuoi dati restano sul telefono.</p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon blue">❤️</div>
+            <h3>HealthKit integrato</h3>
+            <p>Corsa, bici, nuoto, camminata — indoor e outdoor. FC, watt, calorie, elevazione.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon green">📊</div>
+            <h3>Swift Charts</h3>
+            <p>Distanza, ritmo, potenza, zone cardio, heatmap settimanale e split per km.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon orange">🧠</div>
+            <h3>AI Insights offline</h3>
+            <p>Miglioramenti, debolezze, suggerimenti e previsioni calcolati on-device.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon blue">⚖️</div>
+            <h3>Confronti</h3>
+            <p>Attività vs attività, settimana vs settimana, mese vs mese.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon green">📤</div>
+            <h3>Export</h3>
+            <p>Esporta tutto in CSV, JSON o PDF professionale.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon orange">🔒</div>
+            <h3>Privacy totale</h3>
+            <p>Nessun tracking, nessun server. Dati fitness non collegati alla tua identità.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <div class="container">
+        <h2>Come funziona</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num">1</span>
+            <div>
+              <h3>Apri in Xcode</h3>
+              <p>Clona il repo, imposta il tuo Development Team e abilita HealthKit.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div>
+              <h3>Installa su iPhone</h3>
+              <p>HealthKit richiede un dispositivo reale con Apple Salute configurato.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div>
+              <h3>Sincronizza e analizza</h3>
+              <p>Consenti l'accesso ai dati Salute, poi tocca ↻ nella Dashboard.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="download" class="download">
+      <div class="container download-inner">
+        <div>
+          <h2>Pronto per iniziare?</h2>
+          <p>L'app è open source. Compilala da Xcode o scarica l'ultima release.</p>
+          <ul class="req-list">
+            <li>iOS 17.0+</li>
+            <li>Xcode 15+</li>
+            <li>iPhone con Apple Salute</li>
+            <li>Apple Watch (opzionale)</li>
+          </ul>
+        </div>
+        <div class="download-actions">
+          <a href="https://github.com/SatoshiAllien/StevenFitnessClub/releases/latest" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+            Ultima release
+          </a>
+          <a href="https://github.com/SatoshiAllien/StevenFitnessClub/archive/refs/heads/main.zip" class="btn btn-ghost btn-lg">
+            Scarica ZIP
+          </a>
+          <p class="download-note">App Store in arrivo · Per ora installazione via Xcode</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="brand">
+        <img src="img/logo.png" alt="" class="brand-logo" />
+        <span>StevenFitnessClub</span>
+      </div>
+      <p>© 2026 StevenFitnessClub · Analisi fitness offline su Apple Salute</p>
+      <div class="footer-links">
+        <a href="https://github.com/SatoshiAllien/StevenFitnessClub" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/SatoshiAllien/StevenFitnessClub/blob/main/docs/TECHNICAL.md" target="_blank" rel="noopener">Documentazione</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
