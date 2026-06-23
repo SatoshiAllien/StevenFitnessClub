@@ -4,6 +4,7 @@ import Charts
 struct DashboardView: View {
     @EnvironmentObject var dataStore: WorkoutDataStore
     @EnvironmentObject var analytics: AnalyticsEngine
+    @EnvironmentObject var insights: InsightsEngine
     @EnvironmentObject var healthKit: HealthKitService
     @State private var period: TimePeriod = .weekly
 
@@ -33,7 +34,7 @@ struct DashboardView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        Task { await dataStore.syncFromHealthKit(healthKit: healthKit) }
+                        Task { await refreshData() }
                     } label: {
                         Image(systemName: "arrow.clockwise")
                             .rotationEffect(.degrees(dataStore.isSyncing ? 360 : 0))
@@ -47,8 +48,7 @@ struct DashboardView: View {
                 }
             }
             .refreshable {
-                await dataStore.syncFromHealthKit(healthKit: healthKit)
-                analytics.compute(from: dataStore.workouts)
+                await refreshData()
             }
         }
     }
@@ -177,6 +177,12 @@ struct DashboardView: View {
 
     private func formatHours(_ seconds: TimeInterval) -> String {
         String(format: "%.1f", seconds / 3600)
+    }
+
+    private func refreshData() async {
+        await dataStore.syncFromHealthKit(healthKit: healthKit)
+        analytics.compute(from: dataStore.workouts)
+        insights.generate(workouts: dataStore.workouts, metrics: analytics.performanceMetrics)
     }
 }
 

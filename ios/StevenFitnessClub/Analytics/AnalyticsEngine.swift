@@ -144,13 +144,8 @@ final class AnalyticsEngine: ObservableObject {
         let powers = workouts.compactMap(\.avgPower)
         let hrs = workouts.compactMap(\.avgHeartRate)
 
-        var splits: [SplitData] = []
-        if let last = workouts.first, let km = last.distanceKm, km > 1 {
-            let pace = last.avgPaceSecPerKm ?? 0
-            for i in 1...Int(km) {
-                splits.append(SplitData(index: i, distanceKm: 1, paceSecPerKm: pace + Double.random(in: -15...15), heartRate: last.avgHeartRate, elevation: nil))
-            }
-        }
+        // Split reali non disponibili da HealthKit senza eventi per-km: non generare dati fittizi.
+        let splits: [SplitData] = []
 
         let allZones = workouts.flatMap(\.heartRateZones)
         let zoneMap = Dictionary(grouping: allZones, by: \.zone)

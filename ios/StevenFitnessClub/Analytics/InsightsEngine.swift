@@ -84,7 +84,7 @@ final class InsightsEngine: ObservableObject {
             return AIInsight(
                 id: UUID(), category: .training,
                 title: "Aggiungi intensità — \(sport.displayName)",
-                body: "L'85%+ del tempo è in zona facile. Inserisci 1 sessione di soglia/settimana per rompere il plateau.",
+                body: "L'80%+ del tempo è in zona facile. Inserisci 1 sessione di soglia/settimana per rompere il plateau.",
                 priority: 3, relatedSport: sport, createdAt: Date()
             )
         }

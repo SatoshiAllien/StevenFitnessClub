@@ -15,7 +15,7 @@ final class HealthKitService: ObservableObject {
             .distanceWalkingRunning, .distanceCycling, .distanceSwimming,
             .activeEnergyBurned, .stepCount,
             .heartRate, .vo2Max,
-            .runningSpeed, .cyclingPower,
+            .runningSpeed, .runningPower, .cyclingPower,
             .flightsClimbed
         ]
         quantityIds.forEach { id in
@@ -32,14 +32,32 @@ final class HealthKitService: ObservableObject {
 
     func requestAuthorization() async {
         guard isAvailable else {
-            authorizationError = "HealthKit non disponibile"
+            authorizationError = "HealthKit non disponibile su questo dispositivo."
+            isAuthorized = false
             return
         }
         do {
             try await store.requestAuthorization(toShare: [], read: readTypes)
-            isAuthorized = true
+            // HealthKit non rivela se l'utente ha negato la lettura: verifichiamo con una query probe.
+            isAuthorized = await probeReadAccess()
+            if !isAuthorized {
+                authorizationError = "Permessi Apple Salute non concessi. Vai in Impostazioni → Salute → Accesso dati → StevenFitnessClub e attiva tutti i dati."
+            } else {
+                authorizationError = nil
+            }
         } catch {
+            isAuthorized = false
             authorizationError = error.localizedDescription
+        }
+    }
+
+    /// Tenta una lettura minima per capire se i permessi di lettura sono effettivi.
+    private func probeReadAccess() async -> Bool {
+        do {
+            _ = try await fetchWorkouts(since: Calendar.current.date(byAdding: .day, value: -7, to: Date()))
+            return true
+        } catch {
+            return false
         }
     }
 
@@ -75,11 +93,27 @@ final class HealthKitService: ObservableObject {
     }
 
     func fetchPowerSamples(for workout: HKWorkout) async throws -> [(Date, Double)] {
-        guard let type = HKQuantityType.quantityType(forIdentifier: .cyclingPower) else { return [] }
+        let powerId: HKQuantityTypeIdentifier = {
+            switch workout.workoutActivityType {
+            case .running: return .runningPower
+            default: return .cyclingPower
+            }
+        }()
+        guard let type = HKQuantityType.quantityType(forIdentifier: powerId) else { return [] }
         let predicate = HKQuery.predicateForSamples(
             withStart: workout.startDate, end: workout.endDate, options: .strictStartDate
         )
         return try await fetchQuantitySamples(type: type, predicate: predicate, unit: .watt())
+    }
+
+    func fetchStepCount(for workout: HKWorkout) async throws -> Int? {
+        guard let stepType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return nil }
+        let predicate = HKQuery.predicateForSamples(
+            withStart: workout.startDate, end: workout.endDate, options: .strictStartDate
+        )
+        let samples = try await fetchQuantitySamples(type: stepType, predicate: predicate, unit: .count())
+        let total = samples.map(\.1).reduce(0, +)
+        return total > 0 ? Int(total) : nil
     }
 
     func fetchDailySteps(days: Int = 90) async throws -> [(Date, Double)] {

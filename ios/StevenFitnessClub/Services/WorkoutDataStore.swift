@@ -25,13 +25,15 @@ final class WorkoutDataStore: ObservableObject {
             for hk in hkWorkouts {
                 let hrSamples = try await healthKit.fetchHeartRateSamples(for: hk)
                 let powerSamples = try await healthKit.fetchPowerSamples(for: hk)
-                activities.append(mapWorkout(hk, hrSamples: hrSamples, powerSamples: powerSamples))
+                let steps = try await healthKit.fetchStepCount(for: hk)
+                activities.append(mapWorkout(hk, hrSamples: hrSamples, powerSamples: powerSamples, steps: steps))
             }
 
             workouts = activities.sorted { $0.startDate > $1.startDate }
             dailySummaries = buildDailySummaries(from: workouts)
             saveCache()
             healthKit.lastSyncDate = Date()
+            syncError = nil
         } catch {
             syncError = error.localizedDescription
         }
@@ -49,7 +51,8 @@ final class WorkoutDataStore: ObservableObject {
     private func mapWorkout(
         _ hk: HKWorkout,
         hrSamples: [(Date, Double)],
-        powerSamples: [(Date, Double)]
+        powerSamples: [(Date, Double)],
+        steps: Int?
     ) -> WorkoutActivity {
         let sport = SportType.from(hk)
         let distance = hk.totalDistance?.doubleValue(for: .meter())
@@ -85,7 +88,7 @@ final class WorkoutDataStore: ObservableObject {
         var swimPace: Double?
         if sport == .swimming, let d = distance, d > 0 {
             swimStyle = hk.swimmingStrokeStyle?.name
-            swimLaps = hk.metadata?[HKMetadataKeyLapLength] as? Int
+            swimLaps = hk.swimmingLapCount
             swimPace = hk.duration / (d / 100)
         }
 
@@ -106,7 +109,7 @@ final class WorkoutDataStore: ObservableObject {
             elevationGain: elevation,
             avgPaceSecPerKm: pace,
             avgSpeedKmh: speed,
-            steps: nil,
+            steps: steps,
             vo2MaxEstimate: estimateVO2(avgHR: avgHR, duration: hk.duration),
             swimStyle: swimStyle,
             swimLaps: swimLaps,
@@ -124,7 +127,16 @@ final class WorkoutDataStore: ObservableObject {
         let colors = ["5AC8FA", "34C759", "FFCC00", "FF9500", "FF3B30"]
         var zoneMinutes = Array(repeating: 0.0, count: 5)
 
-        for (_, hr) in samples {
+        for i in 0..<samples.count {
+            let hr = samples[i].1
+            let minutes: Double
+            if i + 1 < samples.count {
+                minutes = samples[i + 1].0.timeIntervalSince(samples[i].0) / 60.0
+            } else if samples.count > 1 {
+                minutes = samples[i].0.timeIntervalSince(samples[i - 1].0) / 60.0
+            } else {
+                minutes = 1.0 / 60.0
+            }
             let pct = hr / maxHR
             let zone: Int
             if pct < thresholds[0] { zone = 0 }
@@ -132,7 +144,7 @@ final class WorkoutDataStore: ObservableObject {
             else if pct < thresholds[2] { zone = 2 }
             else if pct < thresholds[3] { zone = 3 }
             else { zone = 4 }
-            zoneMinutes[zone] += 1.0 / 60.0
+            zoneMinutes[zone] += max(minutes, 0)
         }
 
         let total = zoneMinutes.reduce(0, +)
@@ -209,6 +221,13 @@ final class WorkoutDataStore: ObservableObject {
 }
 
 private extension HKWorkout {
+    var swimmingLapCount: Int? {
+        if let events = workoutEvents?.filter({ $0.type == .lap }), !events.isEmpty {
+            return events.count
+        }
+        return nil
+    }
+
     var swimmingStrokeStyle: HKSwimmingStrokeStyle? {
         if let raw = metadata?[HKMetadataKeySwimmingStrokeStyle] as? Int {
             return HKSwimmingStrokeStyle(rawValue: raw)

@@ -3,7 +3,6 @@ import Charts
 
 struct ActivityDetailView: View {
     let workout: WorkoutActivity
-    @EnvironmentObject var analytics: AnalyticsEngine
 
     var body: some View {
         ScrollView {
@@ -69,12 +68,15 @@ struct ActivityDetailView: View {
     }
 
     private var runSection: some View {
-        chartCard("Ritmo per km") {
-            let analysis = analytics.sportAnalyses.first { $0.sport == workout.sport }
-            if let splits = analysis?.pacePerKmSplits, !splits.isEmpty {
-                SplitPaceChart(splits: splits).frame(height: 180)
+        chartCard("Ritmo") {
+            if let pace = workout.paceFormatted {
+                Text(pace)
+                    .font(SFC.Font.metric(28))
+                    .foregroundStyle(SFC.Color.performanceGreen)
             } else {
-                Text("Dati split non disponibili").font(SFC.Font.caption()).foregroundStyle(SFC.Color.textTertiary)
+                Text("Dati split per km non disponibili da Apple Salute per questa attività.")
+                    .font(SFC.Font.caption())
+                    .foregroundStyle(SFC.Color.textTertiary)
             }
         }
     }
