@@ -2,7 +2,7 @@
 # Doppio clic su questo file sul Mac per aprire il progetto in Xcode
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
-XCODEPROJ="$PROJECT_DIR/ios/StevenFitnessClub.xcodeproj"
+XCODEPROJ="$PROJECT_DIR/app/StevenFitnessClub.xcodeproj"
 GITHUB="https://github.com/SatoshiAllien/StevenFitnessClub"
 
 if [ ! -d "$XCODEPROJ" ]; then

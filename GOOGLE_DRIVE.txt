@@ -28,7 +28,7 @@ cd ~/Downloads
 xattr -cr StevenFitnessClub-Mac.zip
 unzip -o StevenFitnessClub-Mac.zip -d ~/Desktop/StevenFitnessClub
 xattr -cr ~/Desktop/StevenFitnessClub
-open -a Xcode ~/Desktop/StevenFitnessClub/ios/StevenFitnessClub.xcodeproj
+open -a Xcode ~/Desktop/StevenFitnessClub/app/StevenFitnessClub.xcodeproj
 
 ═══ SE DICE "MALWARE" ═══
 

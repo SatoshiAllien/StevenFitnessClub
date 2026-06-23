@@ -4,7 +4,7 @@
 
 IL FILE DA APRIRE SUL MAC È QUESTO:
 
-   ios/StevenFitnessClub.xcodeproj
+   app/StevenFitnessClub.xcodeproj
 
 NON aprire file .swift
 NON aprire cartelle singole
@@ -26,7 +26,7 @@ SE NON FUNZIONA iCloud:
 
 1. Copia StevenFitnessClub-Mac.zip sul Mac (USB/AirDrop)
 2. Doppio clic per estrarre
-3. Apri ios/StevenFitnessClub.xcodeproj
+3. Apri app/StevenFitnessClub.xcodeproj
 
 ──────────────────────────────────────────────────────────
 

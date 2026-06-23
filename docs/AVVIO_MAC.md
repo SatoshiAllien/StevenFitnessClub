@@ -27,7 +27,7 @@ Copia l'intera cartella `steven-fitness-club` sul Mac.
 ## 3. Apri il progetto
 
 ```bash
-cd steven-fitness-club/ios
+cd StevenFitnessClub/app
 open StevenFitnessClub.xcodeproj
 ```
 

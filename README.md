@@ -2,6 +2,45 @@
 
 App iOS avanzata di analisi fitness — stile Strava/TrainingPeaks, completamente offline su dati Apple Salute.
 
+**Repository GitHub:** https://github.com/SatoshiAllien/StevenFitnessClub  
+**Sito web:** https://satoshiallien.github.io/StevenFitnessClub/
+
+---
+
+## MacBook + Xcode (inizio rapido)
+
+```bash
+git clone https://github.com/SatoshiAllien/StevenFitnessClub.git
+cd StevenFitnessClub
+open app/StevenFitnessClub.xcodeproj
+```
+
+Oppure doppio clic su `INSTALLA_SU_IPHONE.command`.
+
+In Xcode:
+1. **Signing & Capabilities** → Team → tuo Apple ID
+2. **+ Capability** → HealthKit
+3. Seleziona il tuo **iPhone** (non Simulator)
+4. Premi **▶** (⌘R)
+
+Vedi [MACBOOK.txt](MACBOOK.txt) e [docs/AVVIO_MAC.md](docs/AVVIO_MAC.md) per la guida completa.
+
+---
+
+## Struttura repository
+
+```
+StevenFitnessClub/
+├── app/                         ← Progetto Xcode (apri questo)
+│   ├── StevenFitnessClub.xcodeproj
+│   └── StevenFitnessClub/       ← Codice Swift
+├── website/                     ← Sito vetrina
+├── docs/                        ← Documentazione tecnica
+└── INSTALLA_SU_IPHONE.command   ← Script avvio rapido Mac
+```
+
+---
+
 ## Funzionalità
 
 - **Importazione HealthKit** — corsa, bici, nuoto, camminata (indoor/outdoor)
@@ -12,42 +51,12 @@ App iOS avanzata di analisi fitness — stile Strava/TrainingPeaks, completament
 - **AI Insights** — miglioramenti, debolezze, suggerimenti, previsioni
 - **Export** — CSV, JSON, PDF
 
-## Design
-
-| Elemento | Valore |
-|----------|--------|
-| Blu elettrico | `#007AFF` |
-| Nero profondo | `#0A0A0A` |
-| Verde performance | `#00FF7F` |
-| Arancione energia | `#FF7A00` |
-
-## Struttura
-
-```
-steven-fitness-club/ios/StevenFitnessClub/
-├── Theme/           Design system
-├── Models/          WorkoutActivity, AnalysisModels
-├── Services/        HealthKitService, WorkoutDataStore
-├── Analytics/       AnalyticsEngine, InsightsEngine
-├── Export/          ExportService (CSV/JSON/PDF)
-├── Views/           Dashboard, Activities, Charts, Compare, Insights, Export
-└── Components/      MetricCard, PeriodPicker
-```
-
-## Avvio
-
-1. Apri `ios/StevenFitnessClub.xcodeproj` in **Xcode 15+**
-2. Imposta il tuo **Development Team**
-3. Abilita capability **HealthKit**
-4. Run su iPhone (HealthKit richiede dispositivo reale per dati completi)
-
 ## Requisiti
 
-- iOS 17.0+
-- Xcode 15+
-- iPhone con Apple Salute configurato
-- Apple Watch (opzionale, per dati FC/watt più ricchi)
+- iOS 17.0+ · Xcode 15+ · iPhone con Apple Salute
+- Apple Watch (opzionale, per FC/watt più ricchi)
 
 ## Documentazione
 
-Vedi [docs/TECHNICAL.md](docs/TECHNICAL.md) per architettura, modelli dati e API HealthKit.
+- [docs/TECHNICAL.md](docs/TECHNICAL.md) — architettura e modelli dati
+- [docs/RISOLVI_PROBLEMI.md](docs/RISOLVI_PROBLEMI.md) — troubleshooting build

@@ -52,7 +52,7 @@ Funziona solo per vedere l'interfaccia. **Nessun dato fitness reale** sul simula
 Copia locale consigliata (evita errori sync):
 ```bash
 cp -R ~/Library/Mobile\ Documents/com~apple~CloudDocs/StevenFitnessClub ~/Desktop/StevenFitnessClub
-cd ~/Desktop/StevenFitnessClub/ios
+cd ~/Desktop/StevenFitnessClub/app
 open StevenFitnessClub.xcodeproj
 ```
 

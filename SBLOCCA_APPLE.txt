@@ -13,7 +13,7 @@ Apri Terminale sul Mac e incolla:
 
 cd ~/Desktop/StevenFitnessClub
 xattr -cr .
-open -a Xcode ios/StevenFitnessClub.xcodeproj
+open -a Xcode app/StevenFitnessClub.xcodeproj
 
 Questo rimuove il blocco Apple su TUTTA la cartella.
 

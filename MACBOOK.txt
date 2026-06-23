@@ -1,0 +1,41 @@
+╔══════════════════════════════════════════════════════════════╗
+║     STEVENFITNESSCLUB — ACCESSO DA MACBOOK + XCODE          ║
+╚══════════════════════════════════════════════════════════════╝
+
+REPOSITORY GITHUB:
+  https://github.com/SatoshiAllien/StevenFitnessClub
+
+CARTELLA APP (da aprire in Xcode):
+  app/StevenFitnessClub.xcodeproj
+
+──────────────────────────────────────────────────────────────
+
+SUL MACBOOK — COPIA E INCOLLA NEL TERMINALE:
+
+  git clone https://github.com/SatoshiAllien/StevenFitnessClub.git
+  cd StevenFitnessClub
+  ./INSTALLA_SU_IPHONE.command
+
+  (oppure)
+  open app/StevenFitnessClub.xcodeproj
+
+──────────────────────────────────────────────────────────────
+
+IN XCODE:
+
+  1. Signing & Capabilities → Team → tuo Apple ID
+  2. + Capability → HealthKit
+  3. Seleziona il tuo iPhone in alto (non Simulator)
+  4. Premi ▶  (⌘R)
+
+──────────────────────────────────────────────────────────────
+
+STRUTTURA GITHUB:
+
+  StevenFitnessClub/
+  ├── app/                    ← PROGETTO XCODE (qui)
+  │   ├── StevenFitnessClub.xcodeproj
+  │   └── StevenFitnessClub/  ← codice Swift
+  ├── website/                ← sito web
+  ├── docs/                   ← documentazione
+  └── INSTALLA_SU_IPHONE.command
