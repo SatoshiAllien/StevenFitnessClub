@@ -1,0 +1,115 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A001 /* StevenFitnessClubApp.swift */ = {isa = PBXBuildFile; fileRef = B001; };
+		A002 /* ContentView.swift */ = {isa = PBXBuildFile; fileRef = B002; };
+		A003 /* DesignSystem.swift */ = {isa = PBXBuildFile; fileRef = B003; };
+		A004 /* WorkoutActivity.swift */ = {isa = PBXBuildFile; fileRef = B004; };
+		A005 /* AnalysisModels.swift */ = {isa = PBXBuildFile; fileRef = B005; };
+		A006 /* HealthKitService.swift */ = {isa = PBXBuildFile; fileRef = B006; };
+		A007 /* WorkoutDataStore.swift */ = {isa = PBXBuildFile; fileRef = B007; };
+		A008 /* AnalyticsEngine.swift */ = {isa = PBXBuildFile; fileRef = B008; };
+		A009 /* InsightsEngine.swift */ = {isa = PBXBuildFile; fileRef = B009; };
+		A010 /* ExportService.swift */ = {isa = PBXBuildFile; fileRef = B010; };
+		A011 /* MetricCard.swift */ = {isa = PBXBuildFile; fileRef = B011; };
+		A012 /* ChartViews.swift */ = {isa = PBXBuildFile; fileRef = B012; };
+		A013 /* DashboardView.swift */ = {isa = PBXBuildFile; fileRef = B013; };
+		A014 /* ActivitiesListView.swift */ = {isa = PBXBuildFile; fileRef = B014; };
+		A015 /* ActivityDetailView.swift */ = {isa = PBXBuildFile; fileRef = B015; };
+		A016 /* InsightsView.swift */ = {isa = PBXBuildFile; fileRef = B016; };
+		A017 /* CompareView.swift */ = {isa = PBXBuildFile; fileRef = B017; };
+		A018 /* ExportView.swift */ = {isa = PBXBuildFile; fileRef = B018; };
+		A021 /* AppLogoView.swift */ = {isa = PBXBuildFile; fileRef = B024; };
+		A019 /* Assets.xcassets */ = {isa = PBXBuildFile; fileRef = B019; };
+		A020 /* PrivacyInfo.xcprivacy */ = {isa = PBXBuildFile; fileRef = B020; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StevenFitnessClubApp.swift; sourceTree = "<group>"; };
+		B002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		B004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutActivity.swift; sourceTree = "<group>"; };
+		B005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisModels.swift; sourceTree = "<group>"; };
+		B006 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		B007 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataStore.swift; sourceTree = "<group>"; };
+		B008 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEngine.swift; sourceTree = "<group>"; };
+		B009 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsEngine.swift; sourceTree = "<group>"; };
+		B010 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		B011 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCard.swift; sourceTree = "<group>"; };
+		B012 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViews.swift; sourceTree = "<group>"; };
+		B013 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		B014 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListView.swift; sourceTree = "<group>"; };
+		B015 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
+		B016 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		B017 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		B018 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		B019 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B020 = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		B021 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B022 = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StevenFitnessClub.entitlements; sourceTree = "<group>"; };
+		B023 = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		B024 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
+		C001 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StevenFitnessClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D001 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E001 = {isa = PBXGroup; children = (E002, E003, E004); sourceTree = "<group>"; };
+		E002 = {isa = PBXGroup; children = (B001, B002, E005, E006, E007, E008, E009, E010, E011, E012, B022); path = StevenFitnessClub; sourceTree = "<group>"; };
+		E010 = {isa = PBXGroup; children = (B011, B024); path = Components; sourceTree = "<group>"; };
+		E011 = {isa = PBXGroup; children = (E013, E014, E015, E016, E017, E018); path = Views; sourceTree = "<group>"; };
+		E012 = {isa = PBXGroup; children = (B019, B020, B021); path = Resources; sourceTree = "<group>"; };
+		E003 = {isa = PBXGroup; children = (B023); path = Config; sourceTree = "<group>"; };
+		E004 = {isa = PBXGroup; children = (C001); name = Products; sourceTree = "<group>"; };
+		E005 = {isa = PBXGroup; children = (B003); path = Theme; sourceTree = "<group>"; };
+		E006 = {isa = PBXGroup; children = (B004, B005); path = Models; sourceTree = "<group>"; };
+		E007 = {isa = PBXGroup; children = (B006, B007); path = Services; sourceTree = "<group>"; };
+		E008 = {isa = PBXGroup; children = (B008, B009); path = Analytics; sourceTree = "<group>"; };
+		E009 = {isa = PBXGroup; children = (B010); path = Export; sourceTree = "<group>"; };
+		E013 = {isa = PBXGroup; children = (B013); path = Dashboard; sourceTree = "<group>"; };
+		E014 = {isa = PBXGroup; children = (B014, B015); path = Activities; sourceTree = "<group>"; };
+		E015 = {isa = PBXGroup; children = (B012); path = Charts; sourceTree = "<group>"; };
+		E016 = {isa = PBXGroup; children = (B016); path = Insights; sourceTree = "<group>"; };
+		E017 = {isa = PBXGroup; children = (B017); path = Compare; sourceTree = "<group>"; };
+		E018 = {isa = PBXGroup; children = (B018); path = Export; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F001 = {isa = PBXNativeTarget; buildConfigurationList = G003; buildPhases = (F002, D001, F003); buildRules = (); dependencies = (); name = StevenFitnessClub; productName = StevenFitnessClub; productReference = C001; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		H001 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500;}; buildConfigurationList = G001; compatibilityVersion = "Xcode 14.0"; developmentRegion = it; knownRegions = (it, en, Base); mainGroup = E001; productRefGroup = E004; targets = (F001); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (A019, A020); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F002 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A001,A002,A003,A004,A005,A006,A007,A008,A009,A010,A011,A012,A013,A014,A015,A016,A017,A018,A021); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		I001 = {isa = XCBuildConfiguration; baseConfigurationReference = B023; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_ENTITLEMENTS = StevenFitnessClub/StevenFitnessClub.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = StevenFitnessClub/Resources/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks"); MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.stevenfitnessclub.app; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Debug; };
+		I002 = {isa = XCBuildConfiguration; baseConfigurationReference = B023; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_ENTITLEMENTS = StevenFitnessClub/StevenFitnessClub.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = StevenFitnessClub/Resources/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks"); MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.stevenfitnessclub.app; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; VALIDATE_PRODUCT = YES;}; name = Release; };
+		I003 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; GCC_OPTIMIZATION_LEVEL = 0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; ONLY_ACTIVE_ARCH = YES; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; SWIFT_OPTIMIZATION_LEVEL = "-Onone";}; name = Debug; };
+		I004 = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; COPY_PHASE_STRIP = NO; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; VALIDATE_PRODUCT = YES;}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		G001 = {isa = XCConfigurationList; buildConfigurations = (I003, I004); defaultConfigurationName = Release; };
+		G003 = {isa = XCConfigurationList; buildConfigurations = (I001, I002); defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+
+	};
+	rootObject = H001;
+}

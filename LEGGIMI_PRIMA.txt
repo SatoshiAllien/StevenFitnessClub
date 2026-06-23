@@ -1,0 +1,36 @@
+╔══════════════════════════════════════════════════════════╗
+║         STEVENFITNESSCLUB — LEGGIMI PRIMA               ║
+╚══════════════════════════════════════════════════════════╝
+
+IL FILE DA APRIRE SUL MAC È QUESTO:
+
+   ios/StevenFitnessClub.xcodeproj
+
+NON aprire file .swift
+NON aprire cartelle singole
+
+──────────────────────────────────────────────────────────
+
+SUL MAC — 3 PASSI:
+
+1. Finder → iCloud Drive → StevenFitnessClub
+
+2. Vai nella cartella "Shortcuts"
+   Doppio clic su:  APRI_XCODE.command
+
+3. In Xcode premi ▶ oppure ⌘R
+
+──────────────────────────────────────────────────────────
+
+SE NON FUNZIONA iCloud:
+
+1. Copia StevenFitnessClub-Mac.zip sul Mac (USB/AirDrop)
+2. Doppio clic per estrarre
+3. Apri ios/StevenFitnessClub.xcodeproj
+
+──────────────────────────────────────────────────────────
+
+PERCORSI:
+
+Windows:  C:\Users\krown\iCloudDrive\StevenFitnessClub
+Mac:      iCloud Drive/StevenFitnessClub

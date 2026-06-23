@@ -1,0 +1,43 @@
+SUL MAC — SE IL DOPPIO CLIC BLOCCA / NON FUNZIONA
+=================================================
+
+NON fare doppio clic sul file .xcodeproj
+NON aprire da iCloud
+
+FAI COSÌ (copia e incolla nel Terminale Mac):
+
+---PASSO 1---
+mkdir -p ~/Desktop/StevenFitnessClub
+
+---PASSO 2---
+(copia prima la cartella StevenFitnessClub sul Desktop del Mac con USB)
+
+---PASSO 3— incolla tutto questo blocco ---
+
+cd ~/Desktop/StevenFitnessClub/ios
+xattr -cr StevenFitnessClub.xcodeproj
+xattr -cr ../Shortcuts/*.command 2>/dev/null
+open -a Xcode StevenFitnessClub.xcodeproj
+
+---FINE---
+
+COSA FA:
+- Rimuove blocchi di sicurezza Apple
+- Apre Xcode in modo corretto
+
+SE XCODE SI APRE MA È LENTO:
+Aspetta 2-3 minuti la prima volta (normale).
+
+SE DICE "XCODE NOT FOUND":
+Installa Xcode dall'App Store prima.
+
+DOPO CHE XCODE SI APRE:
+1. Signing & Capabilities → Team → Apple ID
+2. Premi ⌘R
+
+ALTERNATIVA SENZA TERMINALE:
+1. Apri Xcode (icona martello)
+2. File → Open
+3. Vai su Desktop → StevenFitnessClub → ios
+4. Seleziona StevenFitnessClub.xcodeproj
+5. Open

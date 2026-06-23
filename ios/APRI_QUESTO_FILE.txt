@@ -1,0 +1,38 @@
+═══════════════════════════════════════════════════
+  STEVENFITNESSCLUB — COME APRIRE IN XCODE
+═══════════════════════════════════════════════════
+
+NON aprire i file .swift
+NON aprire la cartella StevenFitnessClub
+
+APRI SOLO QUESTO FILE:
+
+   📦 StevenFitnessClub.xcodeproj
+
+(double clic sul file con icona BLU Xcode)
+
+───────────────────────────────────────────────────
+
+PASSI:
+
+1. Apri l'app XCODE (martello blu nel Dock)
+
+2. File → Open...
+
+3. Vai in questa cartella "ios"
+
+4. Seleziona: StevenFitnessClub.xcodeproj
+
+5. Clicca Open
+
+───────────────────────────────────────────────────
+
+COSA DEVI VEDERE IN XCODE:
+
+  Sinistra: albero cartelle (StevenFitnessClub, Views...)
+  Centro:  codice Swift (è NORMALE!)
+  Alto:    menu con pulsante ▶ PLAY
+
+Premi ▶ oppure ⌘R per avviare l'app.
+
+═══════════════════════════════════════════════════

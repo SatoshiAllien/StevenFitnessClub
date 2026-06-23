@@ -1,0 +1,59 @@
+╔══════════════════════════════════════════════════════════╗
+║  "APPLE NON È IN GRADO DI VERIFICARE..." — SOLUZIONE     ║
+╚══════════════════════════════════════════════════════════╝
+
+È NORMALE. I file da Windows/USB non sono firmati da Apple.
+NON è malware — è il tuo progetto StevenFitnessClub.
+
+══════════════════════════════════════════════════════════
+METODO 1 — TERMINALE (il più sicuro, copia tutto)
+══════════════════════════════════════════════════════════
+
+Apri Terminale sul Mac e incolla:
+
+cd ~/Desktop/StevenFitnessClub
+xattr -cr .
+open -a Xcode ios/StevenFitnessClub.xcodeproj
+
+Questo rimuove il blocco Apple su TUTTA la cartella.
+
+══════════════════════════════════════════════════════════
+METODO 2 — TASTO DESTRO
+══════════════════════════════════════════════════════════
+
+Per file .command o .xcodeproj:
+
+1. NON doppio clic
+2. TASTO DESTRO sul file
+3. Clicca "Apri" (Open)
+4. Clicca di nuovo "Apri" nel messaggio
+
+══════════════════════════════════════════════════════════
+METODO 3 — IMPOSTAZIONI
+══════════════════════════════════════════════════════════
+
+Se compare il messaggio malware:
+
+1. Vai in Impostazioni di Sistema
+2. Privacy e sicurezza
+3. In basso trovi: "StevenFitnessClub..." o "xattr..."
+4. Clicca "Apri comunque" (Open Anyway)
+5. Conferma con password/Touch ID
+
+══════════════════════════════════════════════════════════
+METODO 4 — SOLO ZIP
+══════════════════════════════════════════════════════════
+
+Se hai solo lo ZIP:
+
+1. Tasto destro su StevenFitnessClub-Mac.zip → Apri
+2. Estrai sul Desktop
+3. Poi usa METODO 1 (Terminale) sulla cartella estratta
+
+══════════════════════════════════════════════════════════
+DOPO LO SBLOCCO
+══════════════════════════════════════════════════════════
+
+In Xcode:
+1. Signing & Capabilities → Team → Apple ID
+2. Premi ⌘R

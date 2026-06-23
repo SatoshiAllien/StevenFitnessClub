@@ -1,0 +1,46 @@
+STEVENFITNESSCLUB — GOOGLE DRIVE
+=================================
+
+═══ SU WINDOWS (PC) ═══
+
+1. Apri il browser → drive.google.com
+2. Accedi con il tuo account Google
+3. Clicca "+ Nuovo" → "Caricamento file"
+4. Seleziona dal Desktop:
+
+   C:\Users\krown\Desktop\StevenFitnessClub-Mac.zip
+
+   (oppure da Downloads se preferisci)
+
+5. Aspetta che il caricamento finisca (barra verde al 100%)
+
+═══ SU MAC ═══
+
+1. Apri Safari/Chrome → drive.google.com
+2. Stesso account Google
+3. Trova: StevenFitnessClub-Mac.zip
+4. Clicca i 3 puntini ⋮ → Scarica
+5. Lo ZIP va in ~/Downloads/
+
+6. Apri TERMINALE e incolla:
+
+cd ~/Downloads
+xattr -cr StevenFitnessClub-Mac.zip
+unzip -o StevenFitnessClub-Mac.zip -d ~/Desktop/StevenFitnessClub
+xattr -cr ~/Desktop/StevenFitnessClub
+open -a Xcode ~/Desktop/StevenFitnessClub/ios/StevenFitnessClub.xcodeproj
+
+═══ SE DICE "MALWARE" ═══
+
+Normale per file da Google Drive.
+Il comando xattr -cr lo risolve.
+
+Oppure: tasto destro sul file → Apri → Apri
+
+═══ IN XCODE ═══
+
+1. Signing & Capabilities → Team → Apple ID
+2. Premi ⌘R
+
+FILE DA CARICARE (solo 1 file):
+StevenFitnessClub-Mac.zip  (~1.3 MB)
